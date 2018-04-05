@@ -17,10 +17,7 @@ import (
   "net/http"
   "github.com/senseyeio/roger"
 )
-func myfunc(w http.ResponseWriter, r *http.Request){
-    fmt.Printf("rey")
 
-}
 func Bigdatacompscatter(w http.ResponseWriter, r *http.Request) {
 
   rClient, err := roger.NewRClient("127.0.0.1", 6311)

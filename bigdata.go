@@ -19,7 +19,7 @@ import (
 )
 
 /// bigdata service - bigdata service for IIITK-VizB-Services
-func Bigdatacompscatter(w http.ResponseWriter, req *http.Request){
+func Bigdatacompscatter(w http.ResponseWriter, r *http.Request){
 
   rClient, err := roger.NewRClient("127.0.0.1", 6311)
   if err != nil {

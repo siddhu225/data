@@ -10,7 +10,7 @@
 //          iv) SUMALA SAI SIDDARDHA
 
 
-package bigdata
+package bigdata1
 
 import (
   "fmt"

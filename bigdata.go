@@ -21,6 +21,8 @@ import (
 /// bigdata service - bigdata service for IIITK-VizB-Services
 func Bigdatacompscatter(w http.ResponseWriter, r *http.Request){
 
+  fmt.Fprintf(w, Bigdata)
+
   rClient, err := roger.NewRClient("127.0.0.1", 6311)
   if err != nil {
     fmt.Printf("Failed to connect to RServe: %s", err.Error())

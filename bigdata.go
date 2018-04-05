@@ -16,6 +16,7 @@ import (
   "fmt"
   "net/http"
   "github.com/senseyeio/roger"
+  "strconv"
 )
 
 func Bigdatacompscatter(w http.ResponseWriter, r *http.Request) {

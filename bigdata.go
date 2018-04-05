@@ -17,17 +17,15 @@ import (
   "net/http"
   "github.com/senseyeio/roger"
 )
-
-/// bigdata service - bigdata service for IIITK-VizB-Services
-func Bigdatacompscatter(w http.ResponseWriter, r *http.Request){
-
-  fmt.Fprintf(w, Bigdata)
+func Bigdatacompscatter(w http.ResponseWriter, r *http.Request) {
 
   rClient, err := roger.NewRClient("127.0.0.1", 6311)
   if err != nil {
     fmt.Printf("Failed to connect to RServe: %s", err.Error())
     return
   }
+
+  // call generateCorrelationPlot R function, gathering the response
   returnVar, err := rClient.Eval("bgCompScatter()")
   if err != nil {
     fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
@@ -48,3 +46,4 @@ func Bigdatacompscatter(w http.ResponseWriter, r *http.Request){
     fmt.Fprint(w, "Failed to write image to response")
   }
 }
+/// bigdata service - bigdata service for IIITK-VizB-Services

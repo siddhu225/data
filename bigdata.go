@@ -45,5 +45,4 @@ func Bigdatacompscatter(w http.ResponseWriter, req *http.Request){
   if _, err := w.Write(imageBytes); err != nil {
     fmt.Fprint(w, "Failed to write image to response")
   }
-})
 }

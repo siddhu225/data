@@ -26,7 +26,7 @@ func Bigdatacompscatter(w http.ResponseWriter, req *http.Request){
     fmt.Printf("Failed to connect to RServe: %s", err.Error())
     return
   }
-  returnVar, err := rClient.Eval("generateCorrelationPlot()")
+  returnVar, err := rClient.Eval("bgCompScatter()")
   if err != nil {
     fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
     return

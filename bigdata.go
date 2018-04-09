@@ -113,7 +113,7 @@ func Bigdatacomparea(w http.ResponseWriter, r *http.Request) {
 }
 
 
-func bigdatadistdotbox(w http.ResponseWriter, r *http.Request) {
+func Bigdatadistdotbox(w http.ResponseWriter, r *http.Request) {
 
   rClient, err := roger.NewRClient("127.0.0.1", 6311)
   if err != nil {

@@ -366,7 +366,7 @@ func Bigdatareljitter(w http.ResponseWriter, r *http.Request) {
   }
 
   // call generateCorrelationPlot R function, gathering the response
-  returnVar, err := rClient.Eval("bgRelCount()")
+  returnVar, err := rClient.Eval("bgRelJitter()")
   if err != nil {
     fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
     return

@@ -242,7 +242,7 @@ func Bigdatadistviolin(w http.ResponseWriter, r *http.Request) {
   }
 
   // call generateCorrelationPlot R function, gathering the response
-  returnVar, err := rClient.Eval("bgDistViolinr()")
+  returnVar, err := rClient.Eval("bgDistViolin()")
   if err != nil {
     fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
     return

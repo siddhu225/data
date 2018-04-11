@@ -659,4 +659,157 @@ func Bigdatacmpheat(w http.ResponseWriter, r *http.Request) {
     fmt.Fprint(w, "Failed to write image to response")
   }
 }
+
+
+func Bigdatacmphexbin(w http.ResponseWriter, r *http.Request) {
+
+  rClient, err := roger.NewRClient("127.0.0.1", 6311)
+  if err != nil {
+    fmt.Printf("Failed to connect to RServe: %s", err.Error())
+    return
+  }
+
+  // call generateCorrelationPlot R function, gathering the response
+  returnVar, err := rClient.Eval("bgCmpHexbin()")
+  if err != nil {
+    fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
+    return
+  }
+
+  // convert response to a byte array
+  imageBytes, ok := returnVar.([]byte)
+  if !ok {
+    fmt.Fprint(w, "Unexpected response from R")
+    return
+  }
+
+  // return the binary image data along with suitable headers
+  w.Header().Set("Content-Type", "image/png")
+  w.Header().Set("Content-Length", strconv.Itoa(len(imageBytes)))
+  if _, err := w.Write(imageBytes); err != nil {
+    fmt.Fprint(w, "Failed to write image to response")
+  }
+}
+
+
+func Bigdatacmpmosaic(w http.ResponseWriter, r *http.Request) {
+
+  rClient, err := roger.NewRClient("127.0.0.1", 6311)
+  if err != nil {
+    fmt.Printf("Failed to connect to RServe: %s", err.Error())
+    return
+  }
+
+  // call generateCorrelationPlot R function, gathering the response
+  returnVar, err := rClient.Eval("bgCmpMosaic()")
+  if err != nil {
+    fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
+    return
+  }
+
+  // convert response to a byte array
+  imageBytes, ok := returnVar.([]byte)
+  if !ok {
+    fmt.Fprint(w, "Unexpected response from R")
+    return
+  }
+
+  // return the binary image data along with suitable headers
+  w.Header().Set("Content-Type", "image/png")
+  w.Header().Set("Content-Length", strconv.Itoa(len(imageBytes)))
+  if _, err := w.Write(imageBytes); err != nil {
+    fmt.Fprint(w, "Failed to write image to response")
+  }
+}
+
+
+func Bigdatacmpmap(w http.ResponseWriter, r *http.Request) {
+
+  rClient, err := roger.NewRClient("127.0.0.1", 6311)
+  if err != nil {
+    fmt.Printf("Failed to connect to RServe: %s", err.Error())
+    return
+  }
+
+  // call generateCorrelationPlot R function, gathering the response
+  returnVar, err := rClient.Eval("bgCmpMap()")
+  if err != nil {
+    fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
+    return
+  }
+
+  // convert response to a byte array
+  imageBytes, ok := returnVar.([]byte)
+  if !ok {
+    fmt.Fprint(w, "Unexpected response from R")
+    return
+  }
+
+  // return the binary image data along with suitable headers
+  w.Header().Set("Content-Type", "image/png")
+  w.Header().Set("Content-Length", strconv.Itoa(len(imageBytes)))
+  if _, err := w.Write(imageBytes); err != nil {
+    fmt.Fprint(w, "Failed to write image to response")
+  }
+}
+
+func Bigdatacompcorrelation(w http.ResponseWriter, r *http.Request) {
+
+  rClient, err := roger.NewRClient("127.0.0.1", 6311)
+  if err != nil {
+    fmt.Printf("Failed to connect to RServe: %s", err.Error())
+    return
+  }
+
+  // call generateCorrelationPlot R function, gathering the response
+  returnVar, err := rClient.Eval("bgCmpHexbin()")
+  if err != nil {
+    fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
+    return
+  }
+
+  // convert response to a byte array
+  imageBytes, ok := returnVar.([]byte)
+  if !ok {
+    fmt.Fprint(w, "Unexpected response from R")
+    return
+  }
+
+  // return the binary image data along with suitable headers
+  w.Header().Set("Content-Type", "image/png")
+  w.Header().Set("Content-Length", strconv.Itoa(len(imageBytes)))
+  if _, err := w.Write(imageBytes); err != nil {
+    fmt.Fprint(w, "Failed to write image to response")
+  }
+}
+
+func Bigdatarellollipop(w http.ResponseWriter, r *http.Request) {
+
+  rClient, err := roger.NewRClient("127.0.0.1", 6311)
+  if err != nil {
+    fmt.Printf("Failed to connect to RServe: %s", err.Error())
+    return
+  }
+
+  // call generateCorrelationPlot R function, gathering the response
+  returnVar, err := rClient.Eval("bgRelLollipop()")
+  if err != nil {
+    fmt.Fprintf(w, "Graph generation failed with error %s", err.Error())
+    return
+  }
+
+  // convert response to a byte array
+  imageBytes, ok := returnVar.([]byte)
+  if !ok {
+    fmt.Fprint(w, "Unexpected response from R")
+    return
+  }
+
+  // return the binary image data along with suitable headers
+  w.Header().Set("Content-Type", "image/png")
+  w.Header().Set("Content-Length", strconv.Itoa(len(imageBytes)))
+  if _, err := w.Write(imageBytes); err != nil {
+    fmt.Fprint(w, "Failed to write image to response")
+  }
+}
 /// bigdata service - bigdata service for IIITK-VizB-Services
